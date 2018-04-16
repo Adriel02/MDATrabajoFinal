@@ -1,53 +1,86 @@
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Administración equipos</title>
+        <title>Administrar Equipos</title>
     </head>
     <body>
-        <h1>Administrar equipos</h1>
+        <h1>Administración de Equipos</h1>
         <br>
-        <h3>Seleccione un equipo</h3>
-        //buscarEnEquipos(entrenador);
-        
-        <%
-        Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
-        String query = "select * from ADMIN1.JUGADOR where IDEQUIPO=1";
-        PreparedStatement statement = con.prepareStatement(query);
-        ResultSet rs = statement.executeQuery();
-        String[] jugadores= new String[12];
-        int i=0;
-        while(rs.next()){
-            jugadores[i]=rs.getString("NOMBRE")+" "+ rs.getString("APELLIDO")+" "+ rs.getInt("DNI");
-            i++;
-        %>
-        <%=jugadores[2]%><br>
+        <h3>Seleccione un Equipo</h3>
+        <table>
+            <tr>
+                <th>
+                    IDEquipo
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    DNI Primer Entrenador
+                </th>
+                <th>
+                    DNI Segundo Entrenador
+                </th>
+                <th>
+                    DNI Delegado
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th colspan="2">
+                    Opciones
+                </th>
+            </tr>
+            <%
+                ResultSet rs = (ResultSet) request.getAttribute("noRs");
+                if (rs != null) {
+                while (rs.next()) {%>
+            <tr>
+                <td><%=rs.getInt("IDEQUIPO")%></td>
+                <td><%=rs.getString("NOMBRE")%></td>
+                <td><%=rs.getInt("DNIPRIMERENTRENADOR")%></td>
+                <td><%=rs.getInt("DNISEGUNDOENTRENADOR")%></td>
+                <td><%=rs.getInt("DNIDELEGADO")%></td>
+                <td><%=rs.getString("CATEGORIA")%></td>
+                <td><form action="/FrontServlet" method="post">
+                        <input type="hidden" name="command" value="Acciones.EditarEquipo">
+                        <input type="hidden" name="option" value="Editar">
+                        <input type="hidden" name="IDEQUIPO" value="<%=rs.getInt("IDEQUIPO")%>">
+                        <input type="hidden" name="NOMBRE" value="<%=rs.getString("NOMBRE")%>">
+                        <input type="hidden" name="DNIPRIMERENTRENADOR" value="<%=rs.getInt("DNIPRIMERENTRENADOR")%>">
+                        <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
+                        <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
+                        <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
+                        <button type="submit" name="Editar">Editar</button>
+                    </form>
+                </td>
+                <td><form action="/FrontServlet" method="post">
+                        <input type="hidden" name="command" value="Acciones.EditarEquipo">
+                        <input type="hidden" name="option" value="Eliminar">
+                        <input type="hidden" name="IDEQUIPO" value="<%=rs.getInt("IDEQUIPO")%>">
+                        <input type="hidden" name="NOMBRE" value="<%=rs.getString("NOMBRE")%>">
+                        <input type="hidden" name="DNIPRIMERENTRENADOR" value="<%=rs.getInt("DNIPRIMERENTRENADOR")%>">
+                        <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
+                        <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
+                        <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
+                        <button type="submit" name="Editar">Eliminar</button>
+                    </form>
+                </td>
+                
+            </tr>
+            <%}
+            %>
+        </table>   
         <%}
-    %>
-        <%--
-            AQUI VA UNA LISTA DE EQUIPOS A LOS QUE PERTENEZCA EL ENTRENADOR
-            Si seleccionamos un equipo se activan los botones inferiores
-        --%>
-        <form action="paginaVerDetalleEquipo">
-            <button type="submit" name="Ver equipos">Consultar detalles</button>
+            %>
+
+        <br>
+        <form action="CrearEquipo.jsp">
+            <button type="submit" name="Crear jugador">Crear nuevo Equipo</button>
         </form>
         <br>
-        <form action="paginaEditarEquipos">
-            <button type="submit" name="Editar equipos">Editar</button>
-        </form>
-        <br>
-        <form action="paginaCrearEquipo">
-            <button type="submit" name="Crear equipo">Crear un nuevo equipo</button>
-        </form>
-        <br>
-        <form action="paginaEliminarEquipo">
-            <button type="submit" name="Eliminar equipo">Eliminar equipo</button>
-        </form>
     </body>
 </html>

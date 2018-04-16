@@ -9,15 +9,16 @@
         <h1>Bienvenido director técnico</h1>
         <br>
         <h3>Seleccione una opción</h3>
-        <form action="AdministrarEquipos.jsp">
-            <button type="submit" name="Administrar equipos">Administrar equipos</button>
+        <form action="/FrontServlet" method="post">
+            <input type="hidden" name="command" value="Acciones.MostrarJugadores">
+            <button type="submit" name="Administrar jugadores">Administrar jugadores</button>
         </form>
         <form action="AdministrarCuerpoTecnico.jsp">
             <button type="submit" name="Administrar cuerpo técnico">Administrar el cuerpo técnico</button>
         </form>
         <form action="/FrontServlet" method="post">
-            <input type="hidden" name="command" value="Acciones.MostrarJugadores">
-            <button type="submit" name="Administrar jugadores">Administrar jugadores</button>
+            <input type="hidden" name="command" value="Acciones.MostrarEquipos">
+            <button type="submit" name="Administrar Equipos">Administrar Equipos</button>
         </form>
     </body>
 </html>

@@ -21,27 +21,27 @@ import javax.servlet.ServletException;
  *
  * @author nauzetaduen
  */
-public class ActualizarJugador extends Controller{
+public class ActualizarJugador extends Controller {
 
     @Override
     public void process() {
-        
         try {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
             Statement st = con.createStatement();
-            String query= "update ADMIN1.JUGADOR SET DNI = "+ request.getParameter("DNI") 
-                                                 +", NOMBRE = '"+request.getParameter("NOMBRE")
-                                                 +"', APELLIDO = '"+request.getParameter("APELLIDO")
-                                                 +"', IDEQUIPO = " + request.getParameter("IDEQUIPO")
-                                                 +" WHERE DNI = "+ request.getParameter("oldDNI");
+            String query = "update ADMIN1.JUGADOR SET DNI = " + request.getParameter("DNI")
+                    + ", NOMBRE = '" + request.getParameter("NOMBRE")
+                    + "', APELLIDO = '" + request.getParameter("APELLIDO")
+                    + "', IDEQUIPO = " + request.getParameter("IDEQUIPO")
+                    + " WHERE DNI = " + request.getParameter("oldDNI");
             System.out.println(query);
             st.executeUpdate(query);
             updateJugadores();
-            
+
         } catch (ServletException | IOException | SQLException ex) {
         }
     }
-    public void updateJugadores() throws ServletException, IOException{
+
+    public void updateJugadores() throws ServletException, IOException {
         try {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
             PreparedStatement ps = con.prepareStatement("select * from ADMIN1.JUGADOR");
@@ -51,5 +51,5 @@ public class ActualizarJugador extends Controller{
         } catch (SQLException | ServletException | IOException ex) {
         }
     }
-    
+
 }
