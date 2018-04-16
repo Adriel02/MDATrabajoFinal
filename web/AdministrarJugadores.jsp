@@ -31,7 +31,7 @@
             <%
                 ResultSet rs = (ResultSet) request.getAttribute("noRs");
                 if (rs != null) {
-                while (rs.next()) {%>
+                    while (rs.next()) {%>
             <tr>
                 <td><%=rs.getInt("DNI")%></td>
                 <td><%=rs.getString("NOMBRE")%></td>
@@ -44,7 +44,9 @@
                         <input type="hidden" name="NOMBRE" value="<%=rs.getString("NOMBRE")%>">
                         <input type="hidden" name="APELLIDO" value="<%=rs.getString("APELLIDO")%>">
                         <input type="hidden" name="IDEQUIPO" value="<%=rs.getInt("IDEQUIPO")%>">
-                        <button type="submit" name="Editar">Editar</button>
+                        <button type="submit" name="Editar">
+                            <img src="/Recursos/edit.png"  alt="editar" />
+                        </button>
                     </form>
                 </td>
                 <td><form action="/FrontServlet" method="post">
@@ -54,7 +56,9 @@
                         <input type="hidden" name="NOMBRE" value="<%=rs.getString("NOMBRE")%>">
                         <input type="hidden" name="APELLIDO" value="<%=rs.getString("APELLIDO")%>">
                         <input type="hidden" name="IDEQUIPO" value="<%=rs.getInt("IDEQUIPO")%>">
-                        <button type="submit" name="Eliminar">Eliminar</button>
+                        <button type="submit" name="Eliminar">
+                            <img src="/Recursos/eliminar.png"  alt="eliminar" />
+                        </button>
                     </form>
                 </td>
             </tr>
@@ -62,7 +66,7 @@
             %>
         </table>   
         <%}
-            %>
+        %>
 
         <br>
         <form action="CrearJugador.jsp">

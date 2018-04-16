@@ -54,7 +54,9 @@
                         <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
                         <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
                         <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
-                        <button type="submit" name="Editar">Editar</button>
+                        <button type="submit" name="Editar">
+                            <img src="/Recursos/edit.png"  alt="editar" />
+                        </button>
                     </form>
                 </td>
                 <td><form action="/FrontServlet" method="post">
@@ -66,7 +68,9 @@
                         <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
                         <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
                         <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
-                        <button type="submit" name="Editar">Eliminar</button>
+                        <button type="submit" name="Editar">
+                            <img src="/Recursos/eliminar.png"  alt="eliminar" />
+                        </button>
                     </form>
                 </td>
                 
