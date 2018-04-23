@@ -44,9 +44,7 @@ public class CrearEquipo extends Controller.Controller {
             PreparedStatement ps = con.prepareStatement("select * from ADMIN1.EQUIPO");
             ResultSet noRs = ps.executeQuery();
             request.setAttribute("noRs", noRs);
-            System.out.println("no he llegado");
             forward("/AdministrarEquipos.jsp");
-            System.out.println("he llegado");
         } catch (SQLException | ServletException | IOException ex) {
         }
     }

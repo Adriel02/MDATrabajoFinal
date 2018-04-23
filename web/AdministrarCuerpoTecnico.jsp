@@ -1,32 +1,40 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="background-color: #e9ead2">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administración cuerpo técnico</title>
     </head>
     <body>
         <h1>Administrar personal</h1>
+
+        <h2>ENTRENADORES:</h2>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <br>
-        <h3>Seleccione una persona</h3>
-        <%--
-            AQUI VA UNA LISTA DE LAS PERSONAS CON SUS ROLES
-            Si seleccionamos una persona se activan los botones inferiores
-        --%>
-        <form action="paginaVerPersonal">
-            <button type="submit" name="Consultar detalles">Consultar detalles</button>
+        <form action="CrearCuerpoTecnico.jsp">
+             <input type="hidden" name="tipo" value="entrenador">
+            <button type="submit" name="Crear jugador">Crear Entrenador</button>
+        </form>
+        <form action="CrearCuerpoTecnico.jsp">
+             <input type="hidden" name="tipo" value="directortecnico">
+             <button type="submit" name="Crear jugador">Crear Director Tecnico</button>
+        </form>
+        <form action="CrearCuerpoTecnico.jsp">
+             <input type="hidden" name="tipo" value="delegado">
+            <button type="submit" name="Crear jugador">Crear Delegado</button>
         </form>
         <br>
-        <form action="paginaEditarPersonal">
-            <button type="submit" name="Editar personal">Editar</button>
-        </form>
-        <br>
-        <form action="paginaCrearPersonal">
-            <button type="submit" name="Crear personal">Crear nuevo</button>
-        </form>
-        <br>
-        <form action="paginaEliminarPersonal">
-            <button type="submit" name="Eliminar personal">Eliminar personal</button>
-        </form>
     </body>
 </html>
