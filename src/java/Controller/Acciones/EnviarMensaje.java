@@ -6,15 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 
-/**
- *
- * @author usuario
- */
 public class EnviarMensaje extends Controller.Controller{
 
     @Override
