@@ -1,8 +1,3 @@
-<%-- 
-    Document   : recuperar
-    Created on : 30-abr-2018, 12:05:51
-    Author     : usuario
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
