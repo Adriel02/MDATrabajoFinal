@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="Recursos/newcss.css">
     </head>
     <body>
-
+        <div class="Login">
         <form action="/FrontServlet" method="post" id="form">
-            <div class="Login">
+            
                 <h1>Login</h1>
                 <input type="text" name="usuario" placeholder="Usuario" required="required" autofocus="" />
                 <input type="password" name="pass" placeholder="Contraseña" required="required" />
@@ -23,7 +23,12 @@
                     <option value="segundoentrenador">Segundo Entrenador</option>
                 </select>
                 <button type="submit" class="btn btn-primary btn-block btn-large" class="myButton">Entrar</button>
-            </div>
+            
         </form> 
+        <form action="/FrontServlet" method="post">
+            <input type="hidden" name="command" value="cuenta.Recuperar">
+            <button type="submit" class="btn btn-primary btn-block btn-large" class="myButton">Recuperar Contraseña</button>
+        </form>
+            </div>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html style="background-color: #e9ead2">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administrar Equipos</title>
@@ -54,7 +54,9 @@
                         <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
                         <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
                         <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
-                        <button type="submit" name="Editar">Editar</button>
+                        <button type="submit" name="Editar">
+                            <img src="/Recursos/edit.png"  alt="editar" />
+                        </button>
                     </form>
                 </td>
                 <td><form action="/FrontServlet" method="post">
@@ -66,7 +68,9 @@
                         <input type="hidden" name="DNISEGUNDOENTRENADOR" value="<%=rs.getInt("DNISEGUNDOENTRENADOR")%>">
                         <input type="hidden" name="DNIDELEGADO" value="<%=rs.getInt("DNIDELEGADO")%>">
                         <input type="hidden" name="CATEGORIA" value="<%=rs.getString("CATEGORIA")%>">
-                        <button type="submit" name="Editar">Eliminar</button>
+                        <button type="submit" name="Editar">
+                            <img src="/Recursos/eliminar.png"  alt="eliminar" />
+                        </button>
                     </form>
                 </td>
                 

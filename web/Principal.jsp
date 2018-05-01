@@ -2,7 +2,7 @@
 <%@page import="Controller.Model.Usuario"%>    
 <!DOCTYPE html>
 <html>
-    <head>
+    <head style="background-color: #e9ead2">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Página Principal</title>
     </head>
