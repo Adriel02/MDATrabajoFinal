@@ -29,6 +29,10 @@
             <input type="hidden" name="command" value="Acciones.MostrarEquipos">
             <button type="submit" name="Administrar Equipos">Administrar Equipos</button>
         </form>
+        <form action="/FrontServlet" method="post">
+            <input type="hidden" name="command" value="cuenta.MostrarMensajes">
+            <button type="submit" name="Mensajes">Mensajes</button>
+        </form>
     </body>
 </html>
 

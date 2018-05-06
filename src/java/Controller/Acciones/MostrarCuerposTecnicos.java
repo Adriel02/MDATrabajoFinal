@@ -37,10 +37,6 @@ public class MostrarCuerposTecnicos extends Controller{
             
             
             
-            PreparedStatement ps = con.prepareStatement("select * from ADMIN1.DIRECTORTECNICO");
-            System.out.println(ps);
-            ResultSet noRs = ps.executeQuery();
-            request.setAttribute("noRs", noRs);
             forward("/AdministrarCuerpoTecnico.jsp");
         } catch (SQLException | ServletException | IOException ex) {
         }
