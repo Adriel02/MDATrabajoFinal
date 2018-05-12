@@ -33,7 +33,7 @@ public class CrearCuerpoTecnico extends Controller.Controller {
                         + request.getParameter("PASSWORD") + "')";
                 st.executeUpdate(query);
                 update();
-            } catch (ServletException | IOException | SQLException ex) {
+            } catch (SQLException ex)  {
             }
         }
         if (request.getParameter("tipo").equals("directortecnico")) {
@@ -46,7 +46,7 @@ public class CrearCuerpoTecnico extends Controller.Controller {
                         + request.getParameter("PASSWORD") + "')";
                 st.executeUpdate(query);
                 update();
-            } catch (ServletException | IOException | SQLException ex) {
+            } catch (SQLException ex) {
             }
         }
         if (request.getParameter("tipo").equals("delegado")) {
@@ -59,33 +59,56 @@ public class CrearCuerpoTecnico extends Controller.Controller {
                         + request.getParameter("IDEQUIPO") + ")";
                 st.executeUpdate(query);
                 update();
-            } catch (ServletException | IOException | SQLException ex) {
+            } catch (SQLException ex) {
             }
         }
 
     }
 
-    public void update() throws ServletException, IOException {
+//    public void update() throws ServletException, IOException {
+//        try {
+//            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
+//            PreparedStatement ps = null;
+//            ResultSet noRs = null;
+//            if (request.getParameter("tipo").equals("entrenador")) {
+//                ps = con.prepareStatement("select * from ADMIN1.ENTRENADOR");
+//                noRs = ps.executeQuery();
+//            }
+//            if (request.getParameter("tipo").equals("directortecnico")) {
+//                ps = con.prepareStatement("select * from ADMIN1.DIRECTORTECNICO");
+//                 noRs = ps.executeQuery();
+//            }
+//            if (request.getParameter("tipo").equals("delegado")) {
+//                ps = con.prepareStatement("select * from ADMIN1.DELEGADO");
+//                noRs = ps.executeQuery();
+//            }
+//            request.setAttribute("noRs", noRs);
+//            forward("/AdministrarCuerpoTecnico.jsp");
+//        } catch (SQLException | ServletException | IOException ex) {
+//        }
+//    }
+    public void update() {
         try {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
-            PreparedStatement ps = null;
-            ResultSet noRs = null;
-            if (request.getParameter("tipo").equals("entrenador")) {
-                ps = con.prepareStatement("select * from ADMIN1.ENTRENADOR");
-                noRs = ps.executeQuery();
+            PreparedStatement dt = con.prepareStatement("select * from ADMIN1.DIRECTORTECNICO");
+            ResultSet directores = dt.executeQuery();
+            if (directores.next()) {
+                request.setAttribute("directores", directores);
             }
-            if (request.getParameter("tipo").equals("directortecnico")) {
-                ps = con.prepareStatement("select * from ADMIN1.DIRECTORTECNICO");
-                 noRs = ps.executeQuery();
+
+            PreparedStatement ent = con.prepareStatement("select * from ADMIN1.ENTRENADOR");
+            ResultSet entrenadores = ent.executeQuery();
+            if (entrenadores.next()) {
+                request.setAttribute("entrenadores", entrenadores);
             }
-            if (request.getParameter("tipo").equals("delegado")) {
-                ps = con.prepareStatement("select * from ADMIN1.DELEGADO");
-                noRs = ps.executeQuery();
+
+            PreparedStatement dl = con.prepareStatement("select * from ADMIN1.DELEGADO");
+            ResultSet delegados = dl.executeQuery();
+            if (delegados.next()) {
+                request.setAttribute("delegados", delegados);
             }
-            request.setAttribute("noRs", noRs);
             forward("/AdministrarCuerpoTecnico.jsp");
         } catch (SQLException | ServletException | IOException ex) {
         }
     }
-
 }

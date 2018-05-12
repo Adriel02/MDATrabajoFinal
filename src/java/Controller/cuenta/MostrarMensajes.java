@@ -23,7 +23,6 @@ public class MostrarMensajes extends Controller{
     public void process() {
         
         try {
-            System.out.println("ENTRA A MONSTRARMENSAJES.java");
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/AppDB", "admin1", "admin");
             String selectQuery = "select * from ADMIN1.MENSAJES";
             PreparedStatement mensajes = con.prepareStatement(selectQuery);

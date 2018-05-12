@@ -6,6 +6,7 @@
         <title>Crear jugador</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Crear jugador</h1>
         <form action="/FrontServlet" method="post" id="form">
             <input type="hidden" name="command" value="Acciones.CrearJugador">

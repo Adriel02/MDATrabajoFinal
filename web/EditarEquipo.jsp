@@ -6,16 +6,18 @@
         <title>Editando Equipo</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Editando Equipo</h1>
         <form>
             <input type="hidden" name="command" value="Acciones.ActualizarEquipo">
-            <input type="hidden" name="IDEQUIPO" value="<%=request.getParameter("IDEQUIPO")%>"/>
-            <input type="text" name="NOMBRE" placeholder="Nombre" required="required" value="<%=request.getParameter("NOMBRE")%>"/>
-            <input type="number" name="DNIPRIMERENTRENADOR" placeholder="DNI Primer Entrenador" required="required" value="<%=request.getParameter("DNIPRIMERENTRENADOR")%>"/>
-            <input type="number" name="DNISEGUNDOENTRENADOR" placeholder="DNI Segundo Entrenador" required="required" value="<%=request.getParameter("DNISEGUNDOENTRENADOR")%>"/>
-            <input type="number" name="DNIDELEGADO" placeholder="DNI Delegado" required="required" value="<%=request.getParameter("DNIDELEGADO")%>"/>
-            <input type="text" name="CATEGORIA" placeholder="Categoria" required="required" value="<%=request.getParameter("CATEGORIA")%>"/>
-            <input type="submit" value="Actualizar"/>
+            <input type="hidden" name="oldIDEQUIPO" value="<%=request.getParameter("IDEQUIPO")%>"/>
+            Identificador del equipo:<input type="text" name="IDEQUIPO" placeholder="IdEquipo" required="required" value="<%=request.getParameter("IDEQUIPO")%>"/>
+            <br>Nombre del equipo:<input type="text" name="NOMBRE" placeholder="Nombre" required="required" value="<%=request.getParameter("NOMBRE")%>"/>
+            <br>DNI del primer entrenador:<input type="number" name="DNIPRIMERENTRENADOR" placeholder="DNI Primer Entrenador" required="required" value="<%=request.getParameter("DNIPRIMERENTRENADOR")%>"/>
+            <br>DNI del segundo entrenador:<input type="number" name="DNISEGUNDOENTRENADOR" placeholder="DNI Segundo Entrenador" required="required" value="<%=request.getParameter("DNISEGUNDOENTRENADOR")%>"/>
+            <br>DNI del delegado:<input type="number" name="DNIDELEGADO" placeholder="DNI Delegado" required="required" value="<%=request.getParameter("DNIDELEGADO")%>"/>
+            <br>Categoría:<input type="text" name="CATEGORIA" placeholder="Categoria" required="required" value="<%=request.getParameter("CATEGORIA")%>"/>
+            <br><input type="submit" value="Actualizar"/>
         </form>
     </body>
 </html>

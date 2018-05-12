@@ -7,6 +7,7 @@
         <title>Administrar jugadores</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Administración de jugadores</h1>
         <br>
         <h3>Seleccione un jugador</h3>

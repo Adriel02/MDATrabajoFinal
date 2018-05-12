@@ -33,7 +33,6 @@ public class ActualizarJugador extends Controller {
                     + "', APELLIDO = '" + request.getParameter("APELLIDO")
                     + "', IDEQUIPO = " + request.getParameter("IDEQUIPO")
                     + " WHERE DNI = " + request.getParameter("oldDNI");
-            System.out.println(query);
             st.executeUpdate(query);
             updateJugadores();
 

@@ -6,6 +6,7 @@
         <title>Crear Cuerpo Tecnico</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Crear Cuerpo Tecnico</h1>
         <%if (request.getParameter("tipo").equals("entrenador")) {%>
         <form action="/FrontServlet" method="post" id="form">
@@ -15,7 +16,7 @@
             <input type="text" name="NOMBRE" placeholder="Nombre" required="required"/>
             <input type="text" name="APELLIDO" placeholder="APELLIDOS" required="required"/>
             <input type="number" name="IDEQUIPO" placeholder="IDEQUIPO" required="required" />
-            <input type="text" name="PASSWORD" placeholder="PASSWORD" required="required" />
+            <input type="password" name="PASSWORD" placeholder="PASSWORD" required="required" />
             <input type="submit" value="Crear"/>
         </form>
         <% }%>
@@ -27,7 +28,7 @@
             <input type="number" name="DNI" placeholder="DNI" required="required" />
             <input type="text" name="NOMBRE" placeholder="Nombre" required="required"/>
             <input type="text" name="APELLIDO" placeholder="APELLIDOS" required="required" />
-            <input type="text" name="PASSWORD" placeholder="PASSWORD" required="required" />
+            <input type="password" name="PASSWORD" placeholder="PASSWORD" required="required" />
             <input type="submit" value="Crear"/>
         </form>
         <% }%>

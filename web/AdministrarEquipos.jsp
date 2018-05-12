@@ -7,6 +7,7 @@
         <title>Administrar Equipos</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Administración de Equipos</h1>
         <br>
         <h3>Seleccione un Equipo</h3>

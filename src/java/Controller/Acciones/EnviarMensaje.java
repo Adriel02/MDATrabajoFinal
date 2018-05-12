@@ -39,7 +39,7 @@ public class EnviarMensaje extends Controller.Controller{
             
             String query = "insert into ADMIN1.MENSAJES values(" + i++ +","+ request.getParameter("DNI") + ",'"
                    
-                        + request.getParameter("textarea") + "')";
+                        + request.getParameter("textarea") + "',0)";
             System.out.println("QUERY: " + query);
             PreparedStatement a = con.prepareStatement(query);
             a.executeUpdate();

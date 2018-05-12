@@ -7,13 +7,13 @@
         <title>Página Principal</title>
     </head>
     <body>
-        
+        <%@ include file="/headerEntrenador.html" %>
         <h1>Bienvenido entrenador</h1>
         <br>
         <h3>Seleccione una opción</h3>
         <form action="AdministrarEquipos">
             <button type="submit" name="Administrar equipos">Administrar mis equipos</button>
         </form>
-
     </body>
 </html>
+

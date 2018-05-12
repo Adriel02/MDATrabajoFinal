@@ -12,14 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Recupera tu contraseña: 10€</h1>
+        <a href="Index.jsp"><button>Volver</button></a>
+        <h1>Recuperar tu contraseña</h1>
         <form action="/FrontServlet" method="post">
             <input type="hidden" name="command" value="Acciones.EnviarMensaje"><br>
-            <input type="text" name="DNI" placeholder="Pon tu DNI"><br>
-            <textarea name="textarea">HOLA
+            Introduzca el DNI <br><input type="text" name="DNI" placeholder="DNI" required="" autofocus=""><br><br>       
+            Introduzca cual es su problema <br><textarea name="textarea" rows="6" cols="30" required="">
             </textarea><br>
-            <input type="submit" value="Recuperar!"/>
-            
+            <input type="submit" value="Recuperar contraseña"/>
+
         </form>
     </body>
 </html>

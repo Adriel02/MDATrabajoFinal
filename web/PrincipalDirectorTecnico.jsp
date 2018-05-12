@@ -6,14 +6,9 @@
         <title>Pagina principal</title>
     </head>
     <body>
+        <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Bienvenido director técnico</h1>
         <br>
-        <form action="/FrontServlet" method="post">
-            <div class="Logout">
-                <input type="hidden" name="command" value="cuenta.Logout">
-                <button type="submit" class="myButton" id="derecha">Cerrar Sesion</button>
-            </div>
-        </form>
         <h3>Seleccione una opción</h3>
         <form action="/FrontServlet" method="post">
             <input type="hidden" name="command" value="Acciones.MostrarJugadores">
