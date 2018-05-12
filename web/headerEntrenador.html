@@ -15,7 +15,7 @@ and open the template in the editor.
             <!-- El logotipo y el icono que despliega el menú se agrupan
             para mostrarlos mejor en los dispositivos móviles -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="PrincipalDirectorTecnico.jsp">Inicio</a>
+                <a class="navbar-brand" href="PrincipalEntrenador.jsp">Inicio</a>
             </div>
  
             <!-- Agrupar los enlaces de navegación, los formularios y cualquier
@@ -24,7 +24,7 @@ and open the template in the editor.
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <form action="AdministrarEquipos">
-                            <button type="submit" name="Administrar equipos">Administrar mis equipos</button>
+                            <button type="submit" name="Administrar equipos" class="btn btn-default navbar-btn">Administrar mis equipos</button>
                         </form>
                     </li>
                 </ul>
@@ -34,7 +34,7 @@ and open the template in the editor.
                         <form action="/FrontServlet" method="post">
                             <div class="Logout">
                                 <input type="hidden" name="command" value="cuenta.Logout">
-                                <button type="submit" class="myButton" id="derecha">Cerrar Sesion</button>
+                                <button type="submit" id="derecha" class="btn btn-default navbar-btn">Cerrar Sesion</button>
                             </div>
                         </form>
                     </li>
