@@ -1,17 +1,17 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color: #e9ead2">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administrar Equipos</title>
+        <link rel="stylesheet" href="Recursos/tablas.css">
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Administración de Equipos</h1>
         <br>
-        <h3>Seleccione un Equipo</h3>
-        <table>
+        <div id="div"><table>
             <tr>
                 <th>
                     IDEquipo
@@ -31,14 +31,17 @@
                 <th>
                     Categoria
                 </th>
-                <th colspan="2">
-                    Opciones
+                <th>
+                    Modificar
+                </th>
+                <th>
+                    Eliminar
                 </th>
             </tr>
             <%
                 ResultSet rs = (ResultSet) request.getAttribute("noRs");
                 if (rs != null) {
-                while (rs.next()) {%>
+                    while (rs.next()) {%>
             <tr>
                 <td><%=rs.getInt("IDEQUIPO")%></td>
                 <td><%=rs.getString("NOMBRE")%></td>
@@ -74,18 +77,18 @@
                         </button>
                     </form>
                 </td>
-                
+
             </tr>
             <%}
             %>
-        </table>   
+        </table> 
         <%}
-            %>
+        %>
 
         <br>
         <form action="CrearEquipo.jsp">
             <button type="submit" name="Crear jugador">Crear nuevo Equipo</button>
-        </form>
+        </form></div>  
         <br>
     </body>
 </html>

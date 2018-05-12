@@ -1,21 +1,22 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color: #e9ead2">
+<html >
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administración cuerpo técnico</title>
+        <link rel="stylesheet" href="Recursos/tablas.css">
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
-        <h1>Administrar personal</h1>
+        <h1>Administración del personal</h1>
 
                     <%
                         ResultSet entrenadores = (ResultSet) request.getAttribute("entrenadores");
                         if (entrenadores != null) {%>
-                        <h2>Entrenadores</h2>
+                        <div id="div"><h2>Entrenadores</h2>
                         <table>
-                            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th colspan="2">Opciones</th></tr>
+                            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=entrenadores.getInt("DNI")%></td>
                 <td><%=entrenadores.getString("NOMBRE")%></td>
@@ -79,7 +80,7 @@
             </tr>
             <%}
             %>
-        </table>
+                        </table><br>
         <%}
         %>
         <form action="CrearCuerpoTecnico.jsp">
@@ -93,7 +94,7 @@
                         if (directores != null) {%>
                         <h2>Director técnico</h2>
                         <table>
-                            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th colspan="2">Opciones</th></tr>
+                            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=directores.getInt("DNI")%></td>
                 <td><%=directores.getString("NOMBRE")%></td>
@@ -152,7 +153,7 @@
             </tr>
             <%}
             %>
-        </table>
+        </table><br>
         <%}
         %>
         <form action="CrearCuerpoTecnico.jsp">
@@ -166,7 +167,7 @@
             if (delegados != null) {%>
         <h2>Delegados</h2>
         <table>
-            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th colspan="2">Opciones</th></tr>
+            <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=delegados.getInt("DNI")%></td>
                 <td><%=delegados.getString("NOMBRE")%></td>
@@ -231,14 +232,14 @@
             </tr>
             <%}
             %>
-        </table>
+        </table><br>
         <%}
         %>
         <br>
         <form action="CrearCuerpoTecnico.jsp">
             <input type="hidden" name="tipo" value="delegado">
             <button type="submit" name="Crear jugador">Crear Delegado</button>
-        </form>
+        </form></div>
         <br>
     </body>
 </html>

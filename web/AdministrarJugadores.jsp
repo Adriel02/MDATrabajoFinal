@@ -1,17 +1,17 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color: #e9ead2">
+<html >
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administrar jugadores</title>
+        <link rel="stylesheet" href="Recursos/tablas.css">
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Administración de jugadores</h1>
         <br>
-        <h3>Seleccione un jugador</h3>
-        <table>
+        <div id="div"><table>
             <tr>
                 <th>
                     DNI
@@ -25,8 +25,11 @@
                 <th>
                     ID del equipo
                 </th>
-                <th colspan="2">
-                    Opciones
+                <th>
+                    Modificar
+                </th>
+                <th>
+                    Eliminar
                 </th>
             </tr>
             <%
@@ -65,14 +68,14 @@
             </tr>
             <%}
             %>
-        </table>   
+        </table>
         <%}
         %>
 
         <br>
         <form action="CrearJugador.jsp">
             <button type="submit" name="Crear jugador">Crear nuevo jugador</button>
-        </form>
+        </form></div> 
         <br>
     </body>
 </html>

@@ -48,3 +48,13 @@
 #h3{
     color: white;
 }
+table{
+    width: 30%;
+    border: 1px solid;
+}
+th{
+    background-color: #2ecc71; 
+}
+tr:hover{
+    background-color:  #d5f5e3 ;
+}
