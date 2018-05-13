@@ -1,9 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color: #e9ead2">
+<html >
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Crear Equipo</title>
+                <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="Recursos/tablas.css">
+         <link rel="stylesheet" href="Recursos/main.css">
     </head>
     <body>
         <h1>Crear Equipo</h1>

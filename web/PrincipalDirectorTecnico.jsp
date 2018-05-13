@@ -1,20 +1,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html style="background-color: #e9ead2">
+<html >
     <head >
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="Recursos/tablas.css">
+         <link rel="stylesheet" href="Recursos/main.css">
         <title>Pagina principal</title>
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
-        <h1>Bienvenido director técnico</h1>
+        <h1>Bienvenido</h1>
         <br>
         
-        <h4>
+        <p id="bienvenida">
             Bienvenido a la aplicacion IBAPP. Esta usted logeado como Director técnico y podrá hacer uso de las funcionalidades que aparecen
             en la barra de navegacion que esta justo en la parte superior. 
-        </h4><br>
+        </p><br>
         <img id="img" src="https://www.wentzville.k12.mo.us/cms/lib/MO02202303/Centricity/Domain/107/mean-basketball_right.png" >
         <!--
         <h3>Seleccione una opción</h3>

@@ -5,13 +5,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administrar Equipos</title>
+                <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="Recursos/tablas.css">
+         <link rel="stylesheet" href="Recursos/main.css">
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
         <h1>Administración de Equipos</h1>
         <br>
-        <div id="div"><table>
+        <div id="div"><table class="table-striped table-hover">
             <tr>
                 <th>
                     IDEquipo

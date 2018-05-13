@@ -5,7 +5,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administración cuerpo técnico</title>
+                <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="Recursos/tablas.css">
+         <link rel="stylesheet" href="Recursos/main.css">
     </head>
     <body>
         <%@ include file="/headerDirectorTecnico.html" %>
@@ -15,7 +17,7 @@
                         ResultSet entrenadores = (ResultSet) request.getAttribute("entrenadores");
                         if (entrenadores != null) {%>
                         <div id="div"><h2>Entrenadores</h2>
-                        <table>
+                        <table class="table-striped table-hover">
                             <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=entrenadores.getInt("DNI")%></td>
@@ -93,7 +95,7 @@
                         ResultSet directores = (ResultSet) request.getAttribute("directores");
                         if (directores != null) {%>
                         <h2>Director técnico</h2>
-                        <table>
+                        <table class="table-striped table-hover">
                             <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=directores.getInt("DNI")%></td>
@@ -166,7 +168,7 @@
             ResultSet delegados = (ResultSet) request.getAttribute("delegados");
             if (delegados != null) {%>
         <h2>Delegados</h2>
-        <table>
+        <table class="table-striped table-hover">
             <tr><th>DNI</th><th>Nombre</th><th>Apellido</th><th>Equipo</th><th>Modificar</th><th>Eliminar</th></tr>
             <tr>
                 <td><%=delegados.getInt("DNI")%></td>

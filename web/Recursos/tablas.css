@@ -1,24 +1,29 @@
 body
 { font-size: 1.3em;
+  text-align:center;
 }
 
 table
 {
     border-collapse: collapse;
     width: 50%;
+    margin: 0 auto;
 }
 #tabla{
     border-collapse: collapse;
     width: 30%;
 }
-h1 {
+h1 ,td,th{
     text-align: center;
+}
+td,th{
+    border:solid 1px black;
 }
 td{
     padding: 7px;
 }
 th{
-    padding:  15px;
+    padding:  7px;
     height: 35px;
     border-bottom: double;
 }

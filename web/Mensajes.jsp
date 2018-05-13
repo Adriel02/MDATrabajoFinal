@@ -6,6 +6,9 @@
 
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+        <link rel="stylesheet" href="Recursos/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="Recursos/tablas.css">
+         <link rel="stylesheet" href="Recursos/main.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +21,7 @@
         <%@ include file="/headerDirectorTecnico.html" %>
 
         <h1>Mensajes</h1>
-        <div id="div"><table id="tabla">
+        <div id="div"><table class="table-striped table-hover" id="tabla">
             <tr><th>ID</th><th>DNI</th><th>Mensaje</th><th>Estado</th></tr>
                     <%
                         ResultSet rs = (ResultSet) request.getAttribute("mensajes");
